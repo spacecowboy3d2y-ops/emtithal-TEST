@@ -42,7 +42,12 @@
   .menu a::after{ content:""; position:absolute; left:0; bottom:0; width:0; height:2px; background:var(--blue); transition:width .25s ease; }
   .menu a:hover::after{ width:100% }
   .header-ctas{display:flex; align-items:center; gap:10px}
-  .whatsapp{ display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:50%; background:#25D366; color:#0f1111; box-shadow:0 6px 16px rgba(0,0,0,.25); transition:transform .15s ease; }
+  .whatsapp{
+    display:inline-flex; align-items:center; justify-content:center;
+    width:40px; height:40px; border-radius:50%;
+    background:#25D366; color:#fff; line-height:0;
+    box-shadow:0 6px 16px rgba(0,0,0,.25); transition:transform .15s ease;
+  }
   .whatsapp:hover{ transform:translateY(-2px) }
   .whatsapp svg{ width:22px; height:22px; fill:currentColor; display:block }
 
@@ -100,7 +105,7 @@
   /* Testimonials carousel + dots */
   .testimonials .title{ margin-bottom:18px }
   .carousel{ position:relative; overflow:hidden; }
-  .track{ display:flex; gap:var(--gap); flex-wrap:nowrap; will-change:transform; }
+  .track{ display:flex; gap:var(--gap); flex-wrap:nowrap; will-change:transform; } /* no CSS transition */
   .t-card{ min-width:320px; max-width:320px; background:#131717; border:1px solid #233131; border-radius:16px; padding:18px; box-shadow:var(--shadow) }
   .t-head{ display:flex; align-items:center; gap:12px; margin-bottom:8px }
   .avatar{ width:44px; height:44px; border-radius:50%; background:#1b2121; display:grid; place-items:center; font-weight:700; color:#dfe7e7 }
@@ -134,6 +139,7 @@
   .social-row{ display:flex; gap:12px; margin-top:6px }
   .social{ width:42px; height:42px; display:inline-grid; place-items:center; border-radius:10px; border:1px solid #1c2134; color:#e8ecff; background:#121522; transition:transform .15s ease, border-color .15s ease, box-shadow .15s ease, color .15s ease, background .15s ease; }
   .social:hover{ transform:translateY(-2px); border-color:#2a314a; box-shadow:0 8px 20px rgba(0,0,0,.25); color:#fff; background:#191e2e }
+  .social.wa svg{ fill:currentColor !important; stroke:none !important; }
   .foot-divider{ border-top:1px solid #141829; margin:28px 0; }
   .foot-subrow{ display:flex; align-items:center; justify-content:space-between; gap:18px; color:#9aa1b3; font-size:.95rem; }
   .foot-bottom{ background:#090a0f; }
@@ -216,10 +222,13 @@
     <button id="navToggle" class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
 
     <div class="header-ctas">
+      <!-- Crisp WhatsApp icon -->
       <a class="whatsapp" aria-label="WhatsApp"
          href="https://wa.me/966559906886?text=Hello%20Emtithal%2C%20I%27d%20like%20to%20chat%20about%20pest%20control."
          target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5a10 10 0 0 0-16 11.7L3 22l6.9-1.5A10 10 0 1 0 20.5 3.5ZM12 19.2a7.2 7.2 0 1 1 0-14.4 7.2 7.2 0 0 1 0 14.4Zm3.4-5.4c-.2-.1-1.1-.6-1.2-.6s-.3-.1-.4.1l-.5.7c-.1.1-.2.1-.4 0-.2-.1-.9-.4-1.7-1.1-.6-.5-1-1.2-1.1-1.4-.1-.2 0-.3.1-.4l.3-.3c.1-.1.1-.2.2-.3.1-.1.1-.2 0-.3l-.6-1.4c-.1-.3-.2-.3-.3-.3h-.3a.6.6 0 0 0-.4.2c-.1.1-.5.5-.5 1.2 0 .7.5 1.5.6 1.6.1.2 1.2 2 3 2.8.4.2.8.3 1.1.4.5.1 1 .1 1.3.1.4 0 1.1-.4 1.3-.9.2-.5.2-.9.2-.9 0 -.1-.1-.2-.2-.2Z"/></svg>
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <path fill="currentColor" d="M19.11 17.35c-.26-.13-1.52-.75-1.76-.84-.24-.09-.41-.13-.58.13-.17.26-.66.84-.81 1.02-.15.17-.3.2-.56.07-.26-.13-1.09-.4-2.09-1.27-.77-.68-1.29-1.52-1.44-1.77-.15-.26-.02-.4.11-.53.11-.11.26-.3.39-.45.13-.15.17-.26.26-.43.09-.17.04-.32-.02-.45-.06-.13-.58-1.4-.8-1.92-.21-.5-.42-.43-.58-.44h-.5c-.17 0-.45.06-.69.32-.24.26-.9.88-.9 2.15s.92 2.5 1.05 2.67c.13.17 1.81 2.77 4.38 3.88.61.26 1.09.41 1.47.53.62.2 1.19.17 1.64.1.5-.07 1.52-.62 1.74-1.22.22-.6.22-1.1.15-1.21-.06-.11-.24-.17-.5-.3zM16 3.2a12.8 12.8 0 0 0-10.9 19.4L3 29l6.55-1.99A12.79 12.79 0 1 0 16 3.2Zm0 23.16c-2.01 0-3.88-.54-5.49-1.48l-.39-.23-3.27.99.99-3.19-.25-.41a10.6 10.6 0 1 1 8.41 4.32z"/>
+        </svg>
       </a>
       <a class="btn btn-primary" href="#" onclick="openModal();return false;">Get a Quote</a>
     </div>
@@ -328,7 +337,7 @@
   <div class="container">
     <h2 class="title reveal">What Clients Say</h2>
 
-    <div class="carousel reveal" id="tCarousel" aria-label="Testimonials carousel (auto-scrolling, dots, pause on hover)">
+    <div class="carousel reveal" id="tCarousel" aria-label="Testimonials carousel (smooth loop, pause on hover)">
       <div class="track">
         <div class="t-card"><div class="t-head"><div class="avatar">AA</div><div><strong>Amal A.</strong><div class="stars">★★★★★</div></div></div><p class="quote">Same-day visit, and our cockroach issue was gone. Professional, polite, and tidy.</p></div>
         <div class="t-card"><div class="t-head"><div class="avatar">MK</div><div><strong>Mohammed K.</strong><div class="stars">★★★★★</div></div></div><p class="quote">Their IPM documentation helped our restaurant pass audit smoothly.</p></div>
@@ -351,7 +360,7 @@
     <p class="muted reveal" style="margin-bottom:26px">Guides and tips to keep your spaces pest-free.</p>
     <div class="grid reveal">
       <article class="card">
-        <img class="thumb" src="images-/blog---1.jpg" alt="Preventing summer pests" loading="lazy">
+        <img class="thumb" src="images-/blog--1.jpg" alt="Preventing summer pests" loading="lazy">
         <div class="body">
           <div class="post-meta">August 2025 · 4 min read</div>
           <h3><a href="#">5 Quick Wins to Prevent Summer Pests</a></h3>
@@ -359,7 +368,7 @@
         </div>
       </article>
       <article class="card">
-        <img class="thumb" src="images-/blog---2.jpg" alt="Restaurant IPM checklist" loading="lazy">
+        <img class="thumb" src="images-/blog--2.jpg" alt="Restaurant IPM checklist" loading="lazy">
         <div class="body">
           <div class="post-meta">July 2025 · 6 min read</div>
           <h3><a href="#">Restaurant IPM Checklist (Audit-Ready)</a></h3>
@@ -367,7 +376,7 @@
         </div>
       </article>
       <article class="card">
-        <img class="thumb" src="images-/blog---3.jpg" alt="Termite signs and treatment" loading="lazy">
+        <img class="thumb" src="images-/blog--3.jpg" alt="Termite signs and treatment" loading="lazy">
         <div class="body">
           <div class="post-meta">June 2025 · 5 min read</div>
           <h3><a href="#">Termite Warning Signs &amp; First Steps</a></h3>
@@ -436,7 +445,11 @@
         <a class="social" href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M9 22v-9H7V9h2V7.5A4 4 0 0 1 13 3h3v3h-3a1 1 0 0 0-1 1V9h4v4h-4v9"/></svg></a>
         <a class="social" href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="4"/><circle cx="12" cy="12" r="3.5"/><circle cx="17.2" cy="6.8" r="1"/></svg></a>
         <a class="social" href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="2.5"/><circle cx="8" cy="10" r="1.2" style="fill:currentColor;stroke:none"/><path d="M7.2 11.8V17M11 11.8V17M11 13.6c.2-.9 1-1.8 2.3-1.8 1.6 0 2.5 1.1 2.5 2.8V17"/></svg></a>
-        <a class="social" href="https://wa.me/966559906886" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M20.5 3.5a10 10 0 0 0-16 11.7L3 22l6.9-1.5A10 10 0 1 0 20.5 3.5ZM12 19.2a7.2 7.2 0 1 1 0-14.4 7.2 7.2 0 0 1 0 14.4Zm3.4-5.4c-.2-.1-1.1-.6-1.2-.6s-.3-.1-.4.1l-.5.7c-.1.1-.2.1-.4 0-.2-.1-.9-.4-1.7-1.1-.6-.5-1-1.2-1.1-1.4-.1-.2 0-.3.1-.4l.3-.3c.1-.1.1-.2.2-.3.1-.1.1-.2 0-.3l-.6-1.4c-.1-.3-.2-.3-.3-.3h-.3a.6.6 0 0 0-.4.2c-.1.1-.5.5-.5 1.2 0 .7.5 1.5.6 1.6.1.2 1.2 2 3 2.8.4.2.8.3 1.1.4.5.1 1 .1 1.3.1.4 0 1.1-.4 1.3-.9.2-.5.2-.9.2-.9 0 -.1-.1-.2-.2-.2Z"/></svg></a>
+        <a class="social wa" href="https://wa.me/966559906886" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <svg viewBox="0 0 32 32" aria-hidden="true">
+            <path d="M19.11 17.35c-.26-.13-1.52-.75-1.76-.84-.24-.09-.41-.13-.58.13-.17.26-.66.84-.81 1.02-.15.17-.3.2-.56.07-.26-.13-1.09-.4-2.09-1.27-.77-.68-1.29-1.52-1.44-1.77-.15-.26-.02-.4.11-.53.11-.11.26-.3.39-.45.13-.15.17-.26.26-.43.09-.17.04-.32-.02-.45-.06-.13-.58-1.4-.8-1.92-.21-.5-.42-.43-.58-.44h-.5c-.17 0-.45.06-.69.32-.24.26-.9.88-.9 2.15s.92 2.5 1.05 2.67c.13.17 1.81 2.77 4.38 3.88.61.26 1.09.41 1.47.53.62.2 1.19.17 1.64.1.5-.07 1.52-.62 1.74-1.22.22-.6.22-1.1.15-1.21-.06-.11-.24-.17-.5-.3zM16 3.2a12.8 12.8 0 0 0-10.9 19.4L3 29l6.55-1.99A12.79 12.79 0 1 0 16 3.2Zm0 23.16c-2.01 0-3.88-.54-5.49-1.48l-.39-.23-3.27.99.99-3.19-.25-.41a10.6 10.6 0 1 1 8.41 4.32z"/>
+          </svg>
+        </a>
       </div>
     </div>
   </div>
@@ -511,11 +524,11 @@
 <div id="lightbox" aria-hidden="true"></div>
 
 <script>
-  // ===== Header shrink on scroll =====
+  // Header shrink on scroll
   const _hdr=document.querySelector('.header');
   addEventListener('scroll',()=>_hdr.classList.toggle('scrolled',scrollY>10),{passive:true});
 
-  // ===== Mobile nav toggle =====
+  // Mobile nav toggle
   const navBtn=document.getElementById('navToggle');
   const menu=document.querySelector('.menu');
   if(navBtn&&menu){
@@ -525,13 +538,13 @@
     });
   }
 
-  // ===== Reveal on scroll =====
+  // Reveal on scroll
   const io=new IntersectionObserver((ents,obs)=>{
     ents.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); obs.unobserve(e.target); } });
   },{threshold:.15});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-  // ===== Back to Top button =====
+  // Back to Top visibility
   const back = document.getElementById('backToTop');
   const showAfter = 450;
   addEventListener('scroll', () => {
@@ -539,17 +552,17 @@
     else back.classList.remove('show');
   }, {passive:true});
 
-  // ===== Modal controls =====
+  // Modal controls
   const modal=document.getElementById('quoteModal');
   function openModal(){ modal.classList.add('open'); modal.setAttribute('aria-hidden','false'); }
   function closeModal(){ modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); }
   modal.addEventListener('click',e=>{ if(e.target===modal) closeModal(); });
   document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeModal(); });
 
-  // ===== Lazy-load safeguard =====
+  // Lazy-load safeguard
   document.querySelectorAll('img:not([loading])').forEach(img=>img.loading='lazy');
 
-  // ===== Phone mask (+966) =====
+  // Phone mask (+966)
   const phone=document.getElementById('phone');
   if(phone){
     phone.addEventListener('input',e=>{
@@ -561,7 +574,7 @@
     });
   }
 
-  // ===== Form submit: WhatsApp on mobile, email on desktop =====
+  // Form submit: WhatsApp on mobile, email on desktop
   function isMobile(){ return /Android|iPhone|iPad|iPod/i.test(navigator.userAgent); }
   document.getElementById('quoteForm').addEventListener('submit',function(e){
     e.preventDefault();
@@ -584,52 +597,85 @@ Notes: ${d.message||''}`;
     setTimeout(()=>closeModal(),300);
   });
 
-  // ===== Testimonials carousel =====
+  // ===== Testimonials carousel (seamless, smooth, continuous, pause on hover) =====
   (function(){
     const wrap = document.getElementById('tCarousel');
+    if (!wrap) return;
     const track = wrap.querySelector('.track');
-    const slides = Array.from(track.children);
     const dotsWrap = wrap.querySelector('.dots');
 
-    slides.forEach((_,i)=>{
-      const b=document.createElement('button');
-      b.className='dot'; b.type='button'; b.setAttribute('aria-label',`Go to slide ${i+1}`);
-      b.addEventListener('click',()=>{ go(i); reset(); });
+    // Keep originals, clone once for seamless loop
+    const originals = Array.from(track.children);
+    originals.forEach(s => track.appendChild(s.cloneNode(true)));
+    track.style.transition = 'none'; // animated via rAF
+
+    // Dots for original slides
+    dotsWrap.innerHTML = '';
+    originals.forEach((_, i) => {
+      const b = document.createElement('button');
+      b.className = 'dot';
+      b.type = 'button';
+      b.setAttribute('aria-label', `Go to testimonial ${i+1}`);
+      b.addEventListener('click', () => {
+        x = -i * slideW;
+        track.style.transform = `translateX(${x}px)`;
+        syncDots();
+      });
       dotsWrap.appendChild(b);
     });
 
-    let idx=0, timer=null;
-    const cs = getComputedStyle(track);
-    const gap = parseFloat(cs.columnGap || cs.gap || cs.rowGap || getComputedStyle(document.documentElement).getPropertyValue('--gap')) || 22;
-    let slideW=0;
+    let slideW = 0;      // width of one card + gap
+    let setW = 0;        // width of original set
+    let x = 0;           // current translateX in px
+    let paused = false;
+    let lastTS;
+
+    const SPEED = 0.12;  // pixels per ms (tweak for speed)
 
     function measure(){
-      slideW = slides[0].getBoundingClientRect().width + gap;
-      track.style.transition='none';
-      track.style.transform=`translateX(${-idx*slideW}px)`;
-      requestAnimationFrame(()=>track.offsetHeight);
-      track.style.transition='transform 600ms ease-in-out';
+      const first = originals[0].getBoundingClientRect();
+      const second = originals[1] ? originals[1].getBoundingClientRect() : { left:first.right };
+      const gap = Math.max(second.left - first.right, 0);
+      slideW = first.width + gap;
+      setW   = slideW * originals.length;
     }
-    function updateDots(){
-      dotsWrap.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('active', i===idx%slides.length));
-    }
-    function go(i){
-      idx = (i+slides.length)%slides.length;
-      track.style.transform=`translateX(${-idx*slideW}px)`;
-      updateDots();
-    }
-    function step(){ idx = (idx+1) % slides.length; go(idx); }
-    function start(){ if(!timer) timer=setInterval(step, 2600); }
-    function stop(){ clearInterval(timer); timer=null; }
-    function reset(){ stop(); start(); }
 
-    measure(); updateDots(); start();
-    window.addEventListener('resize',measure,{passive:true});
-    wrap.addEventListener('mouseenter',stop);
-    wrap.addEventListener('mouseleave',start);
+    function syncDots(){
+      const i = Math.floor(Math.abs(x) / slideW) % originals.length;
+      [...dotsWrap.children].forEach((d,idx)=>d.classList.toggle('active', idx === i));
+    }
+
+    function tick(now){
+      if (lastTS == null) lastTS = now;
+      const dt = now - lastTS;
+      lastTS = now;
+
+      if (!paused){
+        x -= SPEED * dt;
+        if (x <= -setW) x += setW; // wrap seamlessly
+        track.style.transform = `translateX(${x}px)`;
+        syncDots();
+      }
+      requestAnimationFrame(tick);
+    }
+
+    measure();
+    syncDots();
+    requestAnimationFrame(tick);
+
+    wrap.addEventListener('mouseenter', () => paused = true);
+    wrap.addEventListener('mouseleave', () => paused = false);
+
+    addEventListener('resize', () => {
+      const currentIndex = Math.floor(Math.abs(x) / slideW) % originals.length;
+      measure();
+      x = -currentIndex * slideW;
+      track.style.transform = `translateX(${x}px)`;
+      syncDots();
+    }, { passive:true });
   })();
 
-  // ===== Lightbox =====
+  // Lightbox
   const lb=document.getElementById('lightbox');
   if(lb){
     document.querySelectorAll('.thumb').forEach(img=>{
