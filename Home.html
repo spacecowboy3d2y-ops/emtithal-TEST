@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Emtithal Pest Control | Fast, Safe & Guaranteed</title>
+<meta name="description" content="Fast, safe, and guaranteed pest control for homes, businesses, and industries across Saudi Arabia." />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --teal:#1f4f4c; --teal-2:#0f6f69; --blue:#2a8bd8;
+    --ink:#e9eeee; --muted:#a7b4b2;
+    --bg:#0f1111; --card:#151919;
+    --radius:16px; --shadow:0 12px 40px rgba(0,0,0,.25);
+    --header-h:72px; --gap:22px;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"Poppins","Cairo",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+    margin:0; color:var(--ink); background:var(--bg); line-height:1.6; padding-top:var(--header-h);
+    -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+  }
+  img{max-width:100%; display:block}
+  a{color:inherit; text-decoration:none}
+  :is(section,header,footer)[id]{ scroll-margin-top: calc(var(--header-h) + 12px); }
+  .container{ width:min(1160px, 92%); margin-inline:auto; }
+  .section{ padding:84px 0; position:relative; }
+  .title{ font-size:clamp(1.6rem, 2vw + 1rem, 2.2rem); margin:0 0 14px; letter-spacing:.2px; color:#fff }
+  .lead{ margin:0 0 10px; color:#f2f6f6 }
+  .muted{ color:var(--muted) }
+
+  /* Header */
+  .header{ position:fixed; inset:0 0 auto; z-index:1000; height:var(--header-h); display:flex; align-items:center; background:#103a38; box-shadow:0 6px 20px rgba(0,0,0,.35); }
+  .nav{display:flex; align-items:center; justify-content:space-between; gap:18px;}
+  .brand img{height:52px}
+  .menu{list-style:none; display:flex; gap:24px; margin:0; padding:0}
+  .menu a{ color:#e7f5f4; font-weight:600; letter-spacing:.25px; position:relative; padding-bottom:6px; }
+  .menu a::after{ content:""; position:absolute; left:0; bottom:0; width:0; height:2px; background:var(--blue); transition:width .25s ease; }
+  .menu a:hover::after{ width:100% }
+  .header-ctas{display:flex; align-items:center; gap:10px}
+  .whatsapp{ display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:50%; background:#25D366; color:#0f1111; box-shadow:0 6px 16px rgba(0,0,0,.25); transition:transform .15s ease; }
+  .whatsapp:hover{ transform:translateY(-2px) }
+  .whatsapp svg{ width:22px; height:22px; fill:currentColor; display:block }
+
+  /* Buttons */
+  .btn{ display:inline-block; padding:13px 24px; border-radius:999px; font-weight:700; letter-spacing:.2px; transform:translateZ(0); transition:transform .18s ease, box-shadow .18s ease; box-shadow:0 10px 24px rgba(0,0,0,.35); white-space:nowrap; }
+  .btn-primary{ background:var(--blue); color:#fff } .btn-primary:hover{ transform:translateY(-2px) scale(1.02) }
+  .btn-dark{ background:#0f3c3a; color:#fff } .btn-dark:hover{ background:#0d4f49; transform:translateY(-2px) }
+  .btn-gradient{ background:linear-gradient(90deg, var(--blue), #6aa6ff, var(--teal)); color:#fff; padding:10px 22px; border-radius:999px; font-weight:700; display:inline-block; box-shadow:0 8px 24px rgba(21,77,95,.35); transition:transform .15s ease, filter .2s ease; }
+  .btn-gradient:hover{ transform:translateY(-2px); filter:brightness(1.06); }
+
+  /* Hero */
+  .hero{
+    position:relative; min-height:48vh; padding-block:72px; display:grid; place-items:center; overflow:hidden;
+    color:#fff;
+    --overlay-tint: color-mix(in srgb, currentColor 24%, transparent);
+    background: url('images-/bg-3.jpg') center/cover no-repeat, #0f1a1a; background-blend-mode:multiply;
+  }
+  .hero::before{ content:""; position:absolute; inset:0; background:linear-gradient(180deg, var(--overlay-tint), rgba(0,0,0,.15)); }
+  .hero-inner{ position:relative; z-index:1; width:min(1160px,92%); margin-inline:auto; display:grid; grid-template-columns:1.15fr .85fr; align-items:center; gap:32px; }
+  .hero h1{ margin:0 0 12px; font-weight:700; letter-spacing:.3px; font-size:clamp(1.6rem, 2.1vw + 1rem, 2.2rem) }
+  .hero p{ margin:0 0 22px; opacity:.96 }
+  .hero-card{ background:#132323; border-radius:var(--radius); padding:22px; box-shadow:var(--shadow); border:1px solid rgba(255,255,255,.06); }
+  .hero-logo{ max-width:340px; margin:0 auto }
+  .hero-mark{
+    position:absolute; right:4%; bottom:-4%;
+    width:min(520px, 40vw); opacity:.09; filter:grayscale(100%);
+    mix-blend-mode:luminosity; pointer-events:none;
+  }
+
+  /* Cards */
+  .grid{ display:grid; gap:var(--gap); grid-template-columns:repeat(3,1fr); }
+  .card{ background:var(--card); border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); border:1px solid #233131; transition:transform .18s ease, box-shadow .18s ease, background .18s ease; }
+  .card:hover{ transform:translateY(-6px); background:#192020; box-shadow:0 16px 44px rgba(0,0,0,.35) }
+  .card .body{ padding:20px 20px 24px; }
+  .card h3{ margin:0 0 8px; color:#cfe9e6 }
+  .card p{ margin:0; color:#c1cccc }
+  .thumb{ aspect-ratio:16/9; width:100%; object-fit:cover; display:block; }
+
+  /* Why */
+  .why{ background:var(--teal); color:#fff; }
+  .why .title{ color:#fff }
+  .why-list{ display:grid; grid-template-columns:repeat(2,1fr); gap:12px; list-style:none; padding:0; margin:18px 0 0; }
+  .why-list li{ position:relative; padding-left:30px; font-weight:600; letter-spacing:.2px }
+  .why-list li::before{ content:""; position:absolute; left:0; top:.6em; width:12px; height:12px; border-radius:50%; background:var(--blue); box-shadow:0 0 0 5px rgba(42,139,216,.22); }
+
+  /* Testimonials carousel + dots */
+  .testimonials .title{ margin-bottom:18px }
+  .carousel{ position:relative; overflow:hidden; }
+  .track{ display:flex; gap:var(--gap); flex-wrap:nowrap; will-change:transform; }
+  .t-card{ min-width:320px; max-width:320px; background:#131717; border:1px solid #233131; border-radius:16px; padding:18px; box-shadow:var(--shadow) }
+  .t-head{ display:flex; align-items:center; gap:12px; margin-bottom:8px }
+  .avatar{ width:44px; height:44px; border-radius:50%; background:#1b2121; display:grid; place-items:center; font-weight:700; color:#dfe7e7 }
+  .stars{ color:#ffd166; letter-spacing:2px; font-size:14px }
+  .quote{ color:#cbd4d4; margin-top:6px }
+  .dots{ display:flex; justify-content:center; gap:10px; margin-top:16px }
+  .dot{ width:9px; height:9px; border-radius:999px; background:#2b313d; border:1px solid #3b4352; transition:transform .15s ease, background .15s ease }
+  .dot.active{ background:#fff; transform:scale(1.25) }
+
+  /* Blog (light) */
+  .section-light{ background:#ffffff; color:#1b1f29; }
+  .section-light .title{ color:#0f1216 }
+  .section-light .muted{ color:#5b616e }
+  .section-light .grid .card{ background:#ffffff; border:1px solid #e9eef4; box-shadow:0 8px 24px rgba(0,0,0,.06) }
+  .section-light .card h3{ color:#0f1216 } .section-light .card p{ color:#394150 }
+  .post-meta{ font-size:.9rem; color:#6b7280; margin-bottom:6px }
+
+  /* CTA */
+  .cta{ background:var(--bg); }
+  .cta-inner{ display:flex; align-items:center; justify-content:space-between; gap:20px; background:#131717; border-radius:var(--radius); padding:26px; box-shadow:var(--shadow); }
+  .cta-inner p{ margin:0; font-weight:700; color:#e9f4f4 }
+
+  /* Footer (black) */
+  .footer-modern{ background:#0b0c11; color:#cfd3da; padding-top:56px; border-top:1px solid #0f1117; }
+  .footer-modern a{ color:#cfd3da } .footer-modern a:hover{ color:#fff }
+  .footer-modern svg{ width:18px; height:18px; display:block; stroke:currentColor; stroke-width:1.8; fill:none; stroke-linecap:round; stroke-linejoin:round; }
+  .footer-grid{ display:grid; gap:40px; grid-template-columns:repeat(4,1fr); }
+  .foot-title{ display:flex; align-items:center; gap:10px; color:#fff; font-weight:700; text-transform:uppercase; font-size:.95rem; margin:0 0 14px; }
+  .foot-ico{ display:inline-grid; place-items:center; width:28px; height:28px; border-radius:6px; background:#121522; border:1px solid #1c2134; color:#8fa5ff; }
+  .foot-links{ list-style:none; padding:0; margin:0; display:grid; gap:8px; }
+  .social-row{ display:flex; gap:12px; margin-top:6px }
+  .social{ width:42px; height:42px; display:inline-grid; place-items:center; border-radius:10px; border:1px solid #1c2134; color:#e8ecff; background:#121522; transition:transform .15s ease, border-color .15s ease, box-shadow .15s ease, color .15s ease, background .15s ease; }
+  .social:hover{ transform:translateY(-2px); border-color:#2a314a; box-shadow:0 8px 20px rgba(0,0,0,.25); color:#fff; background:#191e2e }
+  .foot-divider{ border-top:1px solid #141829; margin:28px 0; }
+  .foot-subrow{ display:flex; align-items:center; justify-content:space-between; gap:18px; color:#9aa1b3; font-size:.95rem; }
+  .foot-bottom{ background:#090a0f; }
+  .bottom-inner{ display:flex; align-items:center; justify-content:space-between; gap:18px; padding:18px 0; }
+  .bottom-logo{ height:36px; }
+  .bottom-center{ text-align:center; color:#aab1c2; font-size:.95rem; }
+  .bottom-center a{ color:#aab1c2 }
+
+  /* Modal form */
+  .modal{ position:fixed; inset:0; display:none; place-items:center; background:rgba(0,0,0,.6); z-index:1001; padding:20px; }
+  .modal.open{ display:grid }
+  .dialog{ width:min(680px,96%); background:#111414; color:#e7efef; border-radius:18px; box-shadow:0 24px 80px rgba(0,0,0,.6); overflow:hidden; border:1px solid #233131; }
+  .dialog-header{ background:linear-gradient(135deg, var(--teal), var(--teal-2)); color:#fff; padding:18px 22px; display:flex; align-items:center; justify-content:space-between; }
+  .dialog-body{ padding:22px }
+  .close{ display:none }
+  .form-grid{ display:grid; gap:14px; grid-template-columns:1fr 1fr }
+  .form-grid .full{ grid-column:1 / -1 }
+  label{ font-weight:600; font-size:.95rem; margin-bottom:6px; display:block }
+  input,select,textarea{ width:100%; border:1px solid #2a3636; padding:12px; border-radius:12px; font:inherit; outline:none; color:#eef6f6; background:#0f1313; transition:border .15s ease, box-shadow .15s ease; }
+  input:focus,select:focus,textarea:focus{ border-color:var(--blue); box-shadow:0 0 0 4px rgba(42,139,216,.15) }
+  textarea{ min-height:110px; resize:vertical }
+  .form-actions{ display:flex; gap:12px; align-items:center; margin-top:8px }
+  .small{ font-size:.85rem; color:var(--muted) }
+
+  /* Back to Top button */
+  #backToTop{
+    position:fixed; right:18px; bottom:18px; z-index:1100;
+    width:48px; height:48px; border-radius:999px;
+    display:grid; place-items:center; background:var(--blue); color:#fff;
+    box-shadow:0 10px 24px rgba(0,0,0,.35);
+    opacity:0; pointer-events:none; transform:translateY(10px);
+    transition:opacity .2s ease, transform .2s ease, filter .15s ease;
+  }
+  #backToTop.show{ opacity:1; pointer-events:auto; transform:none; }
+  #backToTop:hover{ filter:brightness(1.05); }
+
+  /* Responsive */
+  @media (max-width:980px){ .hero-inner{ grid-template-columns:1fr; text-align:center } .hero-card{ display:none } .grid{ grid-template-columns:1fr 1fr } }
+  @media (max-width:900px){ .footer-grid{ grid-template-columns:1fr 1fr } }
+  @media (max-width:700px){ .t-card{ min-width:280px; max-width:280px } }
+  @media (max-width:620px){
+    .menu{ gap:14px; flex-wrap:wrap; justify-content:flex-end }
+    .grid{ grid-template-columns:1fr }
+    .why-list{ grid-template-columns:1fr }
+    .form-grid{ grid-template-columns:1fr }
+    .foot-subrow{ flex-direction:column; text-align:center }
+    .bottom-inner{ flex-direction:column; text-align:center }
+  }
+</style>
+</head>
+<body id="top">
+
+<!-- Header (links to other pages) -->
+<header class="header">
+  <div class="container nav">
+    <a class="brand" href="index.html" aria-label="Emtithal Home">
+      <img src="images-/logo-01.png" alt="Emtithal Logo">
+    </a>
+
+    <nav aria-label="Primary">
+      <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="environmental.html">Environmental</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-ctas">
+      <a class="whatsapp" aria-label="WhatsApp"
+         href="https://wa.me/966559906886?text=Hello%20Emtithal%2C%20I%27d%20like%20to%20chat%20about%20pest%20control."
+         target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5a10 10 0 0 0-16 11.7L3 22l6.9-1.5A10 10 0 1 0 20.5 3.5ZM12 19.2a7.2 7.2 0 1 1 0-14.4 7.2 7.2 0 0 1 0 14.4Zm3.4-5.4c-.2-.1-1.1-.6-1.2-.6s-.3-.1-.4.1l-.5.7c-.1.1-.2.1-.4 0-.2-.1-.9-.4-1.7-1.1-.6-.5-1-1.2-1.1-1.4-.1-.2 0-.3.1-.4l.3-.3c.1-.1.1-.2.2-.3.1-.1.1-.2 0-.3l-.6-1.4c-.1-.3-.2-.3-.3-.3h-.3a.6.6 0 0 0-.4.2c-.1.1-.5.5-.5 1.2 0 .7.5 1.5.6 1.6.1.2 1.2 2 3 2.8.4.2.8.3 1.1.4.5.1 1 .1 1.3.1.4 0 1.1-.4 1.3-.9.2-.5.2-.9.2-.9 0 -.1-.1-.2-.2-.2Z"/></svg>
+      </a>
+      <a class="btn btn-primary" href="#" onclick="openModal();return false;">Get a Quote</a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" role="banner">
+  <img class="hero-mark" src="images-/logo-01.png" alt="">
+  <div class="hero-inner">
+    <div>
+      <h1>Fast, Safe &amp; Guaranteed Pest Control</h1>
+      <p class="lead">Protecting homes, businesses &amp; industries across Saudi Arabia.</p>
+      <a class="btn btn-primary" href="#" onclick="openModal();return false;">Request a Free Inspection</a>
+    </div>
+    <aside class="hero-card">
+      <img class="hero-logo" src="images-/logo-01.png" alt="Emtithal Logo">
+      <p class="muted" style="margin-top:14px">
+        Licensed by NCEC (License #ELESL-2024-000425). Member of NPMA. 13+ years of integrated pest management expertise.
+      </p>
+    </aside>
+  </div>
+</section>
+
+<!-- Services -->
+<section class="section" id="services">
+  <div class="container">
+    <h2 class="title">Our Services</h2>
+    <p class="muted" style="margin-bottom:26px">Standardised measures of pest control with a proven track record.</p>
+
+    <div class="grid">
+      <article class="card">
+        <img class="thumb" src="images-/service-1.jpg" alt="Residential pest control treatment">
+        <div class="body">
+          <h3>Residential Pest Control</h3>
+          <p>Proven IPM for cockroaches, ants, termites, and rodents—safe for children &amp; pets.</p>
+        </div>
+      </article>
+      <article class="card">
+        <img class="thumb" src="images-/service-2.jpg" alt="Commercial pest control in a restaurant kitchen">
+        <div class="body">
+          <h3>Commercial Pest Control</h3>
+          <p>Discreet, effective protection for offices, restaurants, hotels, and retail spaces.</p>
+        </div>
+      </article>
+      <article class="card">
+        <img class="thumb" src="images-/service-3.jpg" alt="Industrial fumigation at a warehouse">
+        <div class="body">
+          <h3>Industrial &amp; Fumigation</h3>
+          <p>Specialized treatments for factories &amp; warehouses—compliant with Saudi regulations.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Why -->
+<section class="section why" id="about">
+  <div class="container">
+    <h2 class="title">Why Choose Emtithal?</h2>
+    <ul class="why-list">
+      <li>Licensed by NCEC (License #ELESL-2024-000425)</li>
+      <li>13+ years of expertise in IPM</li>
+      <li>Rapid, same-day response</li>
+      <li>Child &amp; pet-safe methods</li>
+      <li>Member of the National Pest Management Association</li>
+      <li>Consultancy, monitoring &amp; prevention programs</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Environmental -->
+<section class="section" id="environmental">
+  <div class="container">
+    <h2 class="title">Environmental Services</h2>
+    <p class="muted" style="margin-bottom:22px">Emtithal Environmental Consulting — mobile lab, compliance &amp; monitoring.</p>
+
+    <div class="grid">
+      <article class="card">
+        <img class="thumb" src="images-/env-air.jpg" alt="Mobile air quality monitoring station">
+        <div class="body">
+          <h3>Mobile Air Quality Monitoring</h3>
+          <p>PM, CO, NO₂, O₃, SO₂ &amp; H₂S measurements with calibrated equipment.</p>
+        </div>
+      </article>
+      <article class="card">
+        <img class="thumb" src="images-/env-eia.jpg" alt="Environmental impact assessment paperwork">
+        <div class="body">
+          <h3>Environmental Impact &amp; Audits</h3>
+          <p>EIA, monitoring programs, and compliance with Saudi regulations.</p>
+        </div>
+      </article>
+      <article class="card">
+        <img class="thumb" src="images-/env-waste.jpg" alt="Industrial waste management and supervision">
+        <div class="body">
+          <h3>Waste &amp; Site Rehabilitation</h3>
+          <p>Planning, disposal oversight, and remediation strategies for industry.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="section testimonials">
+  <div class="container">
+    <h2 class="title">What Clients Say</h2>
+
+    <div class="carousel" id="tCarousel" aria-label="Testimonials carousel (auto-scrolling, dots, pause on hover)">
+      <div class="track">
+        <div class="t-card"><div class="t-head"><div class="avatar">AA</div><div><strong>Amal A.</strong><div class="stars">★★★★★</div></div></div><p class="quote">Same-day visit, and our cockroach issue was gone. Professional, polite, and tidy.</p></div>
+        <div class="t-card"><div class="t-head"><div class="avatar">MK</div><div><strong>Mohammed K.</strong><div class="stars">★★★★★</div></div></div><p class="quote">Their IPM documentation helped our restaurant pass audit smoothly.</p></div>
+        <div class="t-card"><div class="t-head"><div class="avatar">RS</div><div><strong>Rana S.</strong><div class="stars">★★★★★</div></div></div><p class="quote">Fast response for a rodent issue in our warehouse. Clear plan & follow-up.</p></div>
+        <div class="t-card"><div class="t-head"><div class="avatar">FH</div><div><strong>Fahad H.</strong><div class="stars">★★★★★</div></div></div><p class="quote">Discreet monthly service keeps our hotel pest-free without disrupting guests.</p></div>
+        <div class="t-card"><div class="t-head"><div class="avatar">NS</div><div><strong>Noura S.</strong><div class="stars">★★★★★</div></div></div><p class="quote">They explained every step and used pet-safe products in our villa.</p></div>
+        <div class="t-card"><div class="t-head"><div class="avatar">AB</div><div><strong>Abdul B.</strong><div class="stars">★★★★★</div></div></div><p class="quote">Termite treatment was thorough. The team sealed all entry points.</p></div>
+        <div class="t-card"><div class="t-head"><div class="avatar">LK</div><div><strong>Lina K.</strong><div class="stars">★★★★★</div></div></div><p class="quote">Great communication, on-time visits, and clear reporting each month.</p></div>
+        <div class="t-card"><div class="t-head"><div class="avatar">YS</div><div><strong>Yousef S.</strong><div class="stars">★★★★★</div></div></div><p class="quote">Industrial fumigation handled professionally with all safety procedures.</p></div>
+      </div>
+      <div class="dots" aria-label="Carousel pagination"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Blog -->
+<section class="section section-light" id="blog">
+  <div class="container">
+    <h2 class="title">From the Blog</h2>
+    <p class="muted" style="margin-bottom:26px">Guides and tips to keep your spaces pest-free.</p>
+    <div class="grid">
+      <article class="card">
+        <img class="thumb" src="images-/blog--1.jpg" alt="Preventing summer pests">
+        <div class="body">
+          <div class="post-meta">August 2025 · 4 min read</div>
+          <h3><a href="#">5 Quick Wins to Prevent Summer Pests</a></h3>
+          <p>Simple steps to reduce food, water, and shelter that attract common invaders.</p>
+        </div>
+      </article>
+      <article class="card">
+        <img class="thumb" src="images-/blog--2.jpg" alt="Restaurant IPM checklist">
+        <div class="body">
+          <div class="post-meta">July 2025 · 6 min read</div>
+          <h3><a href="#">Restaurant IPM Checklist (Audit-Ready)</a></h3>
+          <p>Documentation, monitoring devices, and sanitation practices that pass inspections.</p>
+        </div>
+      </article>
+      <article class="card">
+        <img class="thumb" src="images-/blog--3.jpg" alt="Termite signs and treatment">
+        <div class="body">
+          <div class="post-meta">June 2025 · 5 min read</div>
+          <h3><a href="#">Termite Warning Signs &amp; First Steps</a></h3>
+          <p>Spot trouble early and understand treatment options that protect your property.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section cta">
+  <div class="container cta-inner">
+    <p>Got pests today? We’re on the way.</p>
+    <a class="btn btn-dark" href="#" onclick="openModal();return false;">Request a Free Inspection</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer-modern" id="contact">
+  <div class="container footer-grid">
+    <div class="foot-col">
+      <h4 class="foot-title"><span class="foot-ico">
+        <svg viewBox="0 0 24 24"><path d="M14 3H7a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V9l-6-6z"/><path d="M14 3v6h6"/></svg>
+      </span>Content</h4>
+      <ul class="foot-links">
+        <li><a href="services.html">Popular Services</a></li>
+        <li><a href="environmental.html">Mobile Lab</a></li>
+        <li><a href="blog.html">Pest Guides</a></li>
+        <li><a href="blog.html">News & Articles</a></li>
+        <li><a href="#">Before & After</a></li>
+      </ul>
+    </div>
+
+    <div class="foot-col">
+      <h4 class="foot-title"><span class="foot-ico">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 8h.01"/></svg>
+      </span>Information</h4>
+      <ul class="foot-links">
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Our Services</a></li>
+        <li><a href="#" onclick="openModal();return false;">Request Service</a></li>
+        <li><a href="contact.html">Service Areas</a></li>
+        <li><a href="projects.html">Projects</a></li>
+      </ul>
+    </div>
+
+    <div class="foot-col">
+      <h4 class="foot-title"><span class="foot-ico">
+        <svg viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21V5.5z"/><path d="M6.5 3v16M12 7h6M12 11h6M12 15h6"/></svg>
+      </span>Support &amp; Legal</h4>
+      <ul class="foot-links">
+        <li><a href="terms.html">Terms & Conditions</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="#">Copyright Info</a></li>
+        <li><a href="#">Cookies Policy</a></li>
+        <li><a href="contact.html">Client Support</a></li>
+      </ul>
+    </div>
+
+    <div class="foot-col">
+      <h4 class="foot-title"><span class="foot-ico">
+        <svg viewBox="0 0 24 24"><path d="M4 6h16v10H8l-4 4V6z"/></svg>
+      </span>Connect with us</h4>
+      <div class="social-row">
+        <a class="social" href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M9 22v-9H7V9h2V7.5A4 4 0 0 1 13 3h3v3h-3a1 1 0 0 0-1 1V9h4v4h-4v9"/></svg></a>
+        <a class="social" href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="4"/><circle cx="12" cy="12" r="3.5"/><circle cx="17.2" cy="6.8" r="1"/></svg></a>
+        <a class="social" href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="2.5"/><circle cx="8" cy="10" r="1.2" style="fill:currentColor;stroke:none"/><path d="M7.2 11.8V17M11 11.8V17M11 13.6c.2-.9 1-1.8 2.3-1.8 1.6 0 2.5 1.1 2.5 2.8V17"/></svg></a>
+        <a class="social" href="https://wa.me/966559906886" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M20.5 3.5a10 10 0 0 0-16 11.7L3 22l6.9-1.5A10 10 0 1 0 20.5 3.5ZM12 19.2a7.2 7.2 0 1 1 0-14.4 7.2 7.2 0 0 1 0 14.4Zm3.4-5.4c-.2-.1-1.1-.6-1.2-.6s-.3-.1-.4.1l-.5.7c-.1.1-.2.1-.4 0-.2-.1-.9-.4-1.7-1.1-.6-.5-1-1.2-1.1-1.4-.1-.2 0-.3.1-.4l.3-.3c.1-.1.1-.2.2-.3.1-.1.1-.2 0-.3l-.6-1.4c-.1-.3-.2-.3-.3-.3h-.3a.6.6 0 0 0-.4.2c-.1.1-.5.5-.5 1.2 0 .7.5 1.5.6 1.6.1.2 1.2 2 3 2.8.4.2.8.3 1.1.4.5.1 1 .1 1.3.1.4 0 1.1-.4 1.3-.9.2-.5.2-.9.2-.9 0 -.1-.1-.2-.2-.2Z"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container foot-divider"></div>
+
+  <div class="container foot-subrow">
+    <div class="sub-left">Emtithal Environmental Consulting Projects.</div>
+    <div class="sub-right">
+      <a href="services.html">Pest Control</a>
+      <a href="environmental.html">Environmental</a>
+      <a href="services.html">Fumigation</a>
+      <a href="services.html">IPM</a>
+    </div>
+  </div>
+
+  <div class="foot-bottom">
+    <div class="container bottom-inner">
+      <div class="bottom-left"><img src="images-/logo-01.png" alt="Emtithal Logo" class="bottom-logo"></div>
+      <div class="bottom-center">
+        &copy; 2025 Emtithal Pest Control. All rights reserved. &nbsp;·&nbsp;
+        Developed by <a href="mailto:ismailderia123@gmail.com">Ismail Deria</a>
+      </div>
+      <div class="bottom-right">
+        <a class="btn-gradient" href="#" onclick="openModal();return false;">Get Started</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to Top -->
+<a id="backToTop" href="#top" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M18 15l-6-6-6 6"/><path d="M12 9v12"/>
+  </svg>
+</a>
+
+<!-- Modal (Form) -->
+<div class="modal" id="quoteModal" aria-hidden="true" role="dialog" aria-labelledby="quoteTitle">
+  <div class="dialog" role="document">
+    <div class="dialog-header">
+      <h3 id="quoteTitle" style="margin:0">Request a Free Inspection</h3>
+      <button class="close" aria-label="Close" onclick="closeModal()">&times;</button>
+    </div>
+    <div class="dialog-body">
+      <form id="quoteForm">
+        <div class="form-grid">
+          <div><label for="name">Full Name</label><input id="name" name="name" type="text" required placeholder="Your name"></div>
+          <div><label for="phone">Phone / WhatsApp</label><input id="phone" name="phone" type="tel" required placeholder="+966 …"></div>
+          <div><label for="area">City / Area</label><input id="area" name="area" type="text" required placeholder="Riyadh, King Abdullah Road"></div>
+          <div><label for="property">Property Type</label>
+            <select id="property" name="property" required>
+              <option value="">Select…</option><option>Villa / Apartment</option><option>Office</option><option>Restaurant / Hotel</option><option>Warehouse / Industrial</option>
+            </select></div>
+          <div><label for="pest">Pest Type</label>
+            <select id="pest" name="pest" required>
+              <option value="">Select…</option><option>Cockroaches</option><option>Ants</option><option>Termites</option><option>Rodents</option><option>Bed Bugs</option><option>Mosquitoes / Flies</option><option>Fumigation (General)</option>
+            </select></div>
+          <div><label for="urgency">Urgency</label>
+            <select id="urgency" name="urgency" required>
+              <option>Today</option><option>Within 48 hours</option><option>This week</option>
+            </select></div>
+          <div class="full"><label for="message">Notes</label><textarea id="message" name="message" placeholder="Describe the issue, best time to visit, etc."></textarea></div>
+        </div>
+        <div class="form-actions"><button type="submit" class="btn btn-primary">Send Request</button><span class="small">We’ll get back to you shortly.</span></div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Modal controls
+  const modal=document.getElementById('quoteModal');
+  function openModal(){ modal.classList.add('open'); modal.setAttribute('aria-hidden','false'); }
+  function closeModal(){ modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); }
+  modal.addEventListener('click',e=>{ if(e.target===modal) closeModal(); });
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeModal(); });
+
+  // Mailto submission
+  document.getElementById('quoteForm').addEventListener('submit',function(e){
+    e.preventDefault();
+    const d=Object.fromEntries(new FormData(this).entries());
+    const subject=encodeURIComponent('Free Inspection Request');
+    const body=encodeURIComponent(
+`Name: ${d.name}
+Phone/WhatsApp: ${d.phone}
+City/Area: ${d.area}
+Property: ${d.property}
+Pest: ${d.pest}
+Urgency: ${d.urgency}
+
+Notes:
+${d.message||''}`);
+    window.location.href=`mailto:info@emtithaal.com?subject=${subject}&body=${body}`;
+    setTimeout(()=>closeModal(),300);
+  });
+
+  // Testimonials carousel: auto-scroll with dots and pause on hover
+  (function(){
+    const wrap = document.getElementById('tCarousel');
+    const track = wrap.querySelector('.track');
+    const slides = Array.from(track.children);
+    const dotsWrap = wrap.querySelector('.dots');
+
+    slides.forEach((_,i)=>{
+      const b=document.createElement('button');
+      b.className='dot'; b.type='button'; b.setAttribute('aria-label',`Go to slide ${i+1}`);
+      b.addEventListener('click',()=>{ go(i); reset(); });
+      dotsWrap.appendChild(b);
+    });
+
+    let idx=0, timer=null;
+    const cs = getComputedStyle(track);
+    const gap = parseFloat(cs.columnGap || cs.gap || cs.rowGap || getComputedStyle(document.documentElement).getPropertyValue('--gap')) || 22;
+    let slideW=0;
+
+    function measure(){
+      slideW = slides[0].getBoundingClientRect().width + gap;
+      track.style.transition='none';
+      track.style.transform=`translateX(${-idx*slideW}px)`;
+      requestAnimationFrame(()=>track.offsetHeight);
+      track.style.transition='transform 600ms ease-in-out';
+    }
+    function updateDots(){
+      dotsWrap.querySelectorAll('.dot').forEach((d,i)=>d.classList.toggle('active', i===idx%slides.length));
+    }
+    function go(i){
+      idx = (i+slides.length)%slides.length;
+      track.style.transform=`translateX(${-idx*slideW}px)`;
+      updateDots();
+    }
+    function step(){ idx = (idx+1) % slides.length; go(idx); }
+    function start(){ if(!timer) timer=setInterval(step, 2600); }
+    function stop(){ clearInterval(timer); timer=null; }
+    function reset(){ stop(); start(); }
+
+    measure(); updateDots(); start();
+    window.addEventListener('resize',measure,{passive:true});
+    wrap.addEventListener('mouseenter',stop);
+    wrap.addEventListener('mouseleave',start);
+  })();
+
+  // Back to Top visibility
+  const back = document.getElementById('backToTop');
+  const showAfter = 450; // px
+  addEventListener('scroll', () => {
+    if (window.scrollY > showAfter) back.classList.add('show');
+    else back.classList.remove('show');
+  }, {passive:true});
+</script>
+</body>
+</html>
